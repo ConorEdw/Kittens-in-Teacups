@@ -19,6 +19,8 @@ public class LoopMechanic : MonoBehaviour
         // Referencing the walls..
         rightWall = GameObject.Find("WallR");
         leftWall = GameObject.Find("WallL");
+
+        Vector3 cannon = gameObject.transform.position;
     }
 
     void Update()
@@ -38,10 +40,12 @@ public class LoopMechanic : MonoBehaviour
             // allow it to loop by setting its new transform position to the other wall's position. Afterwards, it sets looped bool
             // to true ensuring it won't instantly teleport again, and then increases the loop counter by 1. It then invokes the ResetLoop
             // function very quickly afterwards to set looped back to false so that the functionality will continue.
+            // Also here only the X position is changed for the cannonball to not change its height.
             case "WallL":
                 if (!_looped)
                 {
-                    gameObject.transform.position = rightWall.transform.position;
+                    gameObject.transform.position = new Vector3(rightWall.transform.position.x, 
+                        gameObject.transform.position.y, gameObject.transform.position.z);
                     _looped = true;
                     _loopCount++;
                     Invoke("ResetLoop", .1f);
@@ -51,7 +55,8 @@ public class LoopMechanic : MonoBehaviour
             case "WallR":
                 if (!_looped)
                 {
-                    gameObject.transform.position = leftWall.transform.position;
+                    gameObject.transform.position = new Vector3(leftWall.transform.position.x, 
+                        gameObject.transform.position.y, gameObject.transform.position.z);
                     _looped = true;
                     _loopCount++;
                     Invoke("ResetLoop", .1f);
