@@ -12,7 +12,12 @@ public class CannonShoot : MonoBehaviour
     public GameObject cannonBall;
 
     // Speed of cannonball shot
-    public float speed;
+    public static float speed = 20f;
+
+    private void Start()
+    {
+        speed = 20f;
+    }
 
     // Update is called once per frame
     void Update()
