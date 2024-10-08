@@ -97,7 +97,7 @@ public class IntroController : MonoBehaviour
     }
 
     IEnumerator IncreaseCounter(){
-        while (counterTime <= 60){
+        while (counterTime <= 30){
             for (int j = 0; j < pages[5].playerPanels.Count; j++)
             {
                 if (pages[5].playerPanels[j].gameObject.activeInHierarchy == true){

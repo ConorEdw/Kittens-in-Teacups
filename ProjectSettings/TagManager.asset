@@ -19,6 +19,7 @@ TagManager:
   - MissedTrigger
   - MinigameManager
   - CannonBall
+  - Wall
   layers:
   - Default
   - TransparentFX
