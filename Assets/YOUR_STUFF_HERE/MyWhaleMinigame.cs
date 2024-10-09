@@ -59,6 +59,7 @@ public class MyWhaleMinigame : MinigameBase
     public override void OnPrimaryFire(int playerIndex)
     {
         // shoot left from gameobject position left of player
+        playerCount[playerIndex].HandleButtonInput(0);
     }
 
     /// <summary>
@@ -67,7 +68,8 @@ public class MyWhaleMinigame : MinigameBase
     /// <param name="playerIndex">Which player (0-3) pressed the button</param>
     public override void OnSecondaryFire(int playerIndex)
     {
-       // same as left but for right
+        // same as left but for right
+        playerCount[playerIndex].HandleButtonInput(1);
     }
 
     public override void TimeUp()
