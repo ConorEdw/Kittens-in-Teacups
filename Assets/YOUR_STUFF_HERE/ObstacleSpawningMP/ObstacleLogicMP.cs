@@ -6,7 +6,7 @@ public class ObstacleLogicMP : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Wall")
+        if(collision.tag == "Wall" || collision.tag == "Fish")
         {
             Destroy(gameObject);
         }
@@ -14,7 +14,7 @@ public class ObstacleLogicMP : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.tag == "Player")
+        if (gameObject.tag == "Fish")
         {
             Destroy(gameObject);
         }

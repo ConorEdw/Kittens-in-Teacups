@@ -13,6 +13,10 @@ public class PlayerMovementMP : MonoBehaviour
     public Transform cannonR;
 
     public float cannonSpeed;
+
+    // setting up cooldown for shooting, one number for cooldown and one is for how long ago was last shot
+    public float coolDown;
+    float lastShot;
     
     // Update is called once per frame
     void Update()
@@ -32,13 +36,20 @@ public class PlayerMovementMP : MonoBehaviour
     {
         //if (buttonID == 0)
         //{
-          //   Cannonball cannon = GetCannon();
-            // if (cannon != null)
-             //{
-               // cannon.Fire(transform.position);
-             //}
+        //   Cannonball cannon = GetCannon();
+        // if (cannon != null)
+        //{
+        // cannon.Fire(transform.position);
+        //}
         //}
 
+        // if time from last shot is lower then cooldown then it will not proceed with code
+        if (Time.time - lastShot < coolDown)
+        {
+            return;
+        }
+        // resets last shot value
+        lastShot = Time.time;
         switch (buttonID){
             case 0:
                 // Spawning cannonball under cannon variable at either left or right position

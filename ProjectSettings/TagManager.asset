@@ -20,6 +20,7 @@ TagManager:
   - MinigameManager
   - CannonBall
   - Wall
+  - Obstacle
   layers:
   - Default
   - TransparentFX
