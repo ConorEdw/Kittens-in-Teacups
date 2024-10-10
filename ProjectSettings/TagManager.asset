@@ -18,7 +18,10 @@ TagManager:
   - Cleanup
   - MissedTrigger
   - MinigameManager
+  - CannonBall
+  - Wall
   - Obstacle
+  - Boundary
   layers:
   - Default
   - TransparentFX

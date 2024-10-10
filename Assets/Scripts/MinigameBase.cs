@@ -15,6 +15,8 @@ public abstract class MinigameBase : MonoBehaviour
         private set;
     } = false;
 
+    public static bool minigameStarted = false;
+
     //  Universal Timer
     [Tooltip("How long should the game last for each attempt.")] [SerializeField] 
     private float[] GameDurationPerLevel = new float[4] { 0, 0, 0, 0 };
@@ -104,6 +106,7 @@ public abstract class MinigameBase : MonoBehaviour
     {
         Debug.Log("Starting Mini game");
         m_IsMinigameActive = true;
+        minigameStarted = true;
         Difficulty++;
 
         MinigameStart.Invoke();
